@@ -1,0 +1,174 @@
+/**
+ * Modal API - Estilos
+ * Arquivo: assets/css/modal-api.css
+ */
+
+.modal-api-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 999998;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-api-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-api-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: rgba(30, 30, 30, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    z-index: 999999;
+    max-width: 90vw;
+    max-height: 90vh;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.modal-api-container.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-api-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(40, 40, 40, 0.5);
+}
+
+.modal-api-title {
+    color: #e5e5e5;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    flex: 1;
+}
+
+.modal-api-close {
+    background: transparent;
+    border: none;
+    color: #999;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    margin-left: 16px;
+}
+
+.modal-api-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.modal-api-body {
+    padding: 24px;
+    color: #b5b5b5;
+    font-size: 14px;
+    line-height: 1.6;
+    max-height: calc(90vh - 180px);
+    overflow-y: auto;
+}
+
+.modal-api-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-api-body::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+.modal-api-body::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.modal-api-body::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.modal-api-footer {
+    padding: 16px 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    background: rgba(25, 25, 25, 0.5);
+}
+
+.modal-api-footer button {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(60, 60, 60, 0.8);
+    color: #e5e5e5;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.modal-api-footer button:hover {
+    background: rgba(80, 80, 80, 0.9);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.modal-api-footer button.primary {
+    background: rgba(70, 130, 250, 0.9);
+    border-color: rgba(70, 130, 250, 0.5);
+}
+
+.modal-api-footer button.primary:hover {
+    background: rgba(90, 150, 255, 1);
+}
+
+/* Animações */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes overlayFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
