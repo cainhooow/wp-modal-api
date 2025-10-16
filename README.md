@@ -250,7 +250,3 @@ ModalAPI.create({
 - WordPress 5.0+
 - PHP 7.0+
 - Todos os navegadores modernos (Chrome, Firefox, Safari, Edge)
-
-## 📄 Licença
-
-GPL v2 or later
